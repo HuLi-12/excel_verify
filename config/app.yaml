@@ -1,0 +1,5 @@
+input_dir: input
+template_path: input/资产基本信息表(1).xlsx
+summary_path: input/汇总表截止20260416.xlsx
+rule_path: config/asset_basic_info_rules.yaml
+output_dir: output

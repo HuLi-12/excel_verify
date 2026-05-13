@@ -1,0 +1,109 @@
+sheet_name: 资产基本信息调研表
+
+template:
+  header_rows:
+    category: 1
+    field: 2
+    sub_field: 3
+    sample: 4
+    note: 5
+
+summary:
+  title_row: 1
+  header_rows:
+    category: 2
+    field: 3
+    sub_field: 4
+  data_start_row: 5
+
+special_empty_values:
+  - ""
+  - "/"
+  - "无"
+  - "暂无"
+  - "未提供"
+  - "未挂表"
+  - "在建"
+  - "nan"
+
+required_keywords:
+  - 序号
+  - 资产名称
+  - 管理责任单位
+  - 入账单位
+  - 产权权属人
+  - 资产来源
+  - 所属行政区
+  - 具体地址
+  - 联系人姓名
+  - 手机
+  - 联系电话
+
+strict_numeric_keywords:
+  - 面积
+  - 容积率
+  - 建筑密度
+  - 绿地率
+  - 数量
+  - 免租期
+
+numeric_with_unit_keywords:
+  - 距离
+  - 层高
+  - 单价
+
+comparison_numeric_keywords:
+  - 规划上限
+  - 下限
+
+range_or_description_keywords:
+  - 所在层数
+  - 总层数
+  - 土地剩余使用年限
+  - 拟招租年限
+  - 租赁期限
+
+free_text_numeric_keywords:
+  - 免租期意向
+
+numeric_special_values:
+  - 面议
+  - 待定
+  - 暂定
+  - 永久
+
+numeric_status_suffix_values:
+  - 在建
+  - 待建
+
+enum_rules:
+  资产来源:
+    - 划转
+    - 购入
+    - 自建
+    - 代管
+    - 安置房
+    - 国家财政资金
+    - 划拨
+  土地取得方式:
+    - 划拨
+    - 出让
+  是否有电梯:
+    - 有
+    - 无
+    - 是
+    - 否
+  双回路供电:
+    - 是
+    - 否
+  排水方式:
+    - 雨污分流
+    - 合流
+  交付状态:
+    - 现状交付
+    - 简单清场
+    - 具备基础施工条件
+
+phone_rules:
+  - 手机
+  - 联系电话
