@@ -1,4 +1,4 @@
-# 资产基本信息表校验工具
+# 基本信息表校验工具
 
 本项目是本地命令行版 Excel 校验 MVP：
 
@@ -88,8 +88,8 @@ config/app.yaml
 
 ```yaml
 input_dir: input
-template_path: input/资产基本信息表(1).xlsx
-summary_path: input/汇总表截止20260416.xlsx
+template_path: input/基本信息表.xlsx
+summary_path: input/汇总表.xlsx
 rule_path: config/asset_basic_info_rules.yaml
 output_dir: output
 replace_error_values: true
@@ -219,12 +219,12 @@ python main.py --summary "input/新的汇总表.xlsx"
 显式指定全部路径：
 
 ```bash
-python main.py --template "input/资产基本信息表(1).xlsx" --summary "input/汇总表截止20260416.xlsx" --rules "config/asset_basic_info_rules.yaml" --output "output/校验错误报告.xlsx"
+python main.py --template "input/资产基本信息表(1).xlsx" --summary "input/汇总表.xlsx" --rules "config/asset_basic_info_rules.yaml" --output "output/校验错误报告.xlsx"
 ```
 
 如果 `config/app.yaml` 不存在或没有配置模板/汇总表路径，程序会自动扫描 `input/`：
 
-- 文件名包含 `资产基本信息表` 或 `模板` 的 Excel 作为模板
+- 文件名包含 `基本信息表` 或 `模板` 的 Excel 作为模板
 - 文件名包含 `汇总表` 或 `汇总` 的 Excel 作为待校验数据
 - 自动忽略 Excel/WPS 生成的 `~$` 锁文件
 
