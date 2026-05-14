@@ -7,15 +7,24 @@ from typing import Any
 SPECIAL_EMPTY = {"/", "", "无", "暂无", "未提供", "不涉及"}
 UNIT_PATTERN = re.compile(r"^(\d+(?:\.\d+)?)([\u4e00-\u9fa5a-zA-Z㎡]+)$")
 DECIMAL_ALLOWED_KEYWORDS = ["面积", "容积率", "建筑密度", "绿地率", "单价", "金额", "价格", "层高"]
+ID_CARD_KEYWORDS = ["身份证", "身份证号", "证件号码", "居民身份证"]
+PHONE_KEYWORDS = ["手机", "手机号", "联系电话", "联系人电话", "电话"]
 
 
 def infer_rule(field_name: str, sample_value: Any) -> dict[str, Any]:
     text = _normalize(sample_value)
+    if _matches_any_keyword(field_name, ID_CARD_KEYWORDS):
+        return {"type": "id_card"}
+    if _matches_any_keyword(field_name, PHONE_KEYWORDS):
+        return {"type": "phone"}
     if "X" in text.upper():
         return {"type": "string"}
     field_enum = _enum_from_field_name(field_name, text)
     if field_enum:
         return field_enum
+    date_rule = _date_rule(field_name, text)
+    if date_rule:
+        return date_rule
     if text in SPECIAL_EMPTY:
         return {"type": "any", "allow_special_empty": True}
     if "；" in text:
@@ -97,3 +106,17 @@ def _clean_list_item(value: str) -> str:
 
 def _allows_decimal(field_name: str) -> bool:
     return any(keyword in field_name for keyword in DECIMAL_ALLOWED_KEYWORDS)
+
+
+def _matches_any_keyword(field_name: str, keywords: list[str]) -> bool:
+    return any(keyword in field_name for keyword in keywords)
+
+
+def _date_rule(field_name: str, text: str) -> dict[str, str] | None:
+    if re.fullmatch(r"\d{4}\.\d{1,2}\.\d{1,2}", text):
+        return {"type": "date", "format": "yyyy.MM.dd"}
+    if re.fullmatch(r"\d{4}-\d{1,2}-\d{1,2}", text):
+        return {"type": "date", "format": "yyyy-MM-dd"}
+    if re.fullmatch(r"\d{8}", text) and "日期" in field_name:
+        return {"type": "date", "format": "yyyyMMdd"}
+    return None

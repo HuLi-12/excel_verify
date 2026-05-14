@@ -25,6 +25,8 @@ template_path: input/模板.xlsx
 summary_path: input/汇总.xlsx
 rule_path: config/rules.yaml
 output_dir: reports
+replace_error_values: false
+generate_error_detail_sheet: false
 """,
         encoding="utf-8",
     )
@@ -39,6 +41,8 @@ output_dir: reports
     assert config.summary == tmp_path / "input" / "汇总.xlsx"
     assert config.rules == tmp_path / "config" / "rules.yaml"
     assert config.output == tmp_path / "reports" / "校验错误报告_20260513_143005.xlsx"
+    assert config.replace_error_values is False
+    assert config.generate_error_detail_sheet is False
 
 
 def test_resolve_run_config_cli_args_override_app_yaml(tmp_path):

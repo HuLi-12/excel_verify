@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d91489e-fc32-4943-9a6c-19cdc3280eb5" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/excel_verify.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/汇总表截止20260416.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/资产基本信息表(1).xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="2d91489e-fc32-4943-9a6c-19cdc3280eb5" name="更改" comment="关于对excel的文件格式判断">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/~$校验错误报告_20260513_154530.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/~$校验错误报告_20260513_155621.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cell_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cell_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/output_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/output_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rule_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rule_infer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/template_driven_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/template_driven_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_app_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_app_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_cell_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_cell_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_output_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_output_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_rule_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rule_infer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,24 +32,24 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3DeXIBHTaudc1cSQnBoyYnBMquG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Learning_code/python/excel_verify/input",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Learning_code/python/excel_verify/input&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Learning_code\python\excel_verify\input" />
@@ -89,6 +95,19 @@
       <option name="presentableId" value="Default" />
       <updated>1778643426891</updated>
     </task>
+    <task id="LOCAL-00001" summary="关于对excel的文件格式判断">
+      <option name="closed" value="true" />
+      <created>1778659366501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778659366501</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="关于对excel的文件格式判断" />
+    <option name="LAST_COMMIT_MESSAGE" value="关于对excel的文件格式判断" />
   </component>
 </project>

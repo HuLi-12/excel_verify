@@ -23,6 +23,8 @@ class RunConfig:
     summary: Path
     rules: Path
     output: Path
+    replace_error_values: bool = True
+    generate_error_detail_sheet: bool = True
 
 
 def resolve_run_config(
@@ -58,7 +60,14 @@ def resolve_run_config(
     )
     output = _resolve_output_path(root, args.output, app_config, current_time)
 
-    return RunConfig(template=template, summary=summary, rules=rules, output=output)
+    return RunConfig(
+        template=template,
+        summary=summary,
+        rules=rules,
+        output=output,
+        replace_error_values=bool(app_config.get("replace_error_values", True)),
+        generate_error_detail_sheet=bool(app_config.get("generate_error_detail_sheet", True)),
+    )
 
 
 def _parse_args(argv: Sequence[str] | None) -> argparse.Namespace:

@@ -58,12 +58,17 @@ def _cell_error(
     value: Any,
 ) -> dict[str, Any]:
     return {
+        "status": error.get("status", "ERROR"),
         "Excel行号": excel_row_number,
         "Excel列号": column.excel_column,
         "字段名": field_rule.field_name,
-        "原始值": normalize_cell(value),
-        "错误类型": error["错误类型"],
-        "错误说明": error["错误说明"],
+        "原始值": error.get("原始值", normalize_cell(value)),
+        "输出值": error.get("输出值", "/"),
+        "错误类型": error.get("错误类型", ""),
+        "错误说明": error.get("错误说明", ""),
+        "警告类型": error.get("警告类型", ""),
+        "警告说明": error.get("警告说明", ""),
+        "修正说明": error.get("修正说明", ""),
     }
 
 

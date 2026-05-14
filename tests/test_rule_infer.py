@@ -61,7 +61,11 @@ def test_infer_ignores_template_sample_prefix():
 
 
 def test_phone_placeholder_with_x_is_string_not_unit_number():
-    assert infer_rule("联系电话_手机", "139XXXXXXXX")["type"] == "string"
+    assert infer_rule("联系电话_手机", "139XXXXXXXX")["type"] == "phone"
+
+
+def test_infer_id_card_rule_from_field_name():
+    assert infer_rule("联系人_身份证号", "510xxxxxxxxxxxxxxx")["type"] == "id_card"
 
 
 def test_list_inference_ignores_newlines_and_trailing_chinese_period():
@@ -86,3 +90,9 @@ def test_area_list_with_integer_samples_allows_decimal_items():
         "separator": "；",
         "item_type": "number",
     }
+
+
+def test_infer_date_rule_from_template_sample_format():
+    assert infer_rule("合同签订日期", "2026.05.06") == {"type": "date", "format": "yyyy.MM.dd"}
+    assert infer_rule("合同签订日期", "2026-05-06") == {"type": "date", "format": "yyyy-MM-dd"}
+    assert infer_rule("合同签订日期", "20260506") == {"type": "date", "format": "yyyyMMdd"}
